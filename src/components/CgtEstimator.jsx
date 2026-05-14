@@ -244,7 +244,7 @@ export default function CgtEstimator() {
                 <div className="flex items-center justify-between bg-emerald-50 border border-emerald-200 p-4 rounded-xl shadow-inner">
                   <div>
                     <p className="text-sm font-bold text-emerald-800 flex items-center gap-2">
-                      <Calendar size={16} /> Held > 12 Months?
+                      <Calendar size={16} /> Held {'>'} 12 Months?
                     </p>
                     <p className="text-xs text-emerald-600 font-medium mt-0.5">Triggers the 50% CGT Discount</p>
                   </div>
@@ -378,7 +378,7 @@ export default function CgtEstimator() {
                           <div className="w-8 h-8 rounded-full bg-emerald-200 flex items-center justify-center text-emerald-700 font-bold text-xs">4</div>
                           <div>
                             <p className="text-sm font-bold text-emerald-800">Apply 50% CGT Discount</p>
-                            <p className="text-[10px] text-emerald-600 uppercase tracking-wider">Asset held > 12 Months</p>
+                            <p className="text-[10px] text-emerald-600 uppercase tracking-wider">Asset held {'>'} 12 Months</p>
                           </div>
                         </div>
                         <p className="text-lg font-black text-emerald-600">-{formatCurrency(cgtModel.discountApplied)}</p>

@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
 import { CheckCircle2, Loader2, Briefcase, MapPin, BarChart4, Save } from 'lucide-react';
-import { motion, AnimatePresence, Reorder } from 'framer-motion';
+import { motion as Motion, AnimatePresence, Reorder } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 
 import { useIncomeEngine } from '../../hooks/useIncomeEngine';
@@ -30,7 +29,7 @@ export default function Profile() {
       <div className="flex-1 max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
@@ -38,15 +37,15 @@ export default function Profile() {
               Income Command Center
             </h1>
             <p className={`${mutedText} mt-2 font-medium`}>
-              Manage all revenue streams, backed securely by cloud.
+              Manage revenue streams; data is stored in this browser when you save.
             </p>
-          </motion.div>
+          </Motion.div>
 
           <div />
         </div>
 
         {/* Hero Dashboard */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="relative overflow-hidden rounded-3xl p-10 bg-[#0a2540] text-white shadow-2xl mb-12"
@@ -88,12 +87,12 @@ export default function Profile() {
               ) : (
                 <>
                   <Save size={20} />
-                  Save Configuration
+                  Save to browser
                 </>
               )}
             </button>
           </div>
-        </motion.div>
+        </Motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Left Column: Streams */}

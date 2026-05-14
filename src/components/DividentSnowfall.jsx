@@ -56,7 +56,6 @@ export default function DividendSnowball() {
     const projection = [];
     let portfolioValue = inputs.initialInvestment;
     let totalContributions = inputs.initialInvestment;
-    let totalDividendsReceived = 0;
     let totalCapitalGrowth = 0;
     let totalReinvested = 0;
 
@@ -83,8 +82,6 @@ export default function DividendSnowball() {
       const taxToPay = taxLiability - frankingCredit;
       
       const netDividend = cashDividend - taxToPay;
-      
-      totalDividendsReceived += cashDividend;
 
       // 4. Reinvest (DRIP)
       if (inputs.reinvestDividends && netDividend > 0) {

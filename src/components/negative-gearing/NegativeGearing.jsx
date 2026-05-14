@@ -35,9 +35,6 @@ const formatCurrency = (val) =>
 const formatPercent = (val) =>
   new Intl.NumberFormat('en-AU', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(val / 100);
 
-const formatNumber = (val) =>
-  new Intl.NumberFormat('en-AU').format(Math.round(val));
-
 const Tooltip = ({ content, children }) => (
   <div className="group relative inline-block">
     {children}

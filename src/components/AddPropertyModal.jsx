@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/GlobalContext';
 
 export default function AddPropertyModal({ setIsModalOpen }) {
   // Pulling the passport and the refresh engine from the vault
-  const { token, fetchAnalytics } = useContext(GlobalContext);
+  const { fetchAnalytics } = useContext(GlobalContext);
 
   const [isSaving, setIsSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -36,7 +36,7 @@ export default function AddPropertyModal({ setIsModalOpen }) {
     try {
       const response = await fetch('http://localhost:8000/assets/', {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 

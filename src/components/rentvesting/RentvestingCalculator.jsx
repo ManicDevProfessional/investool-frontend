@@ -37,10 +37,6 @@ export default function RentvestingCalculator() {
     setInputs(prev => ({ ...prev, [name]: parsedValue }));
   };
 
-  const handleSliderChange = (name, value) => {
-    setInputs(prev => ({ ...prev, [name]: value }));
-  };
-
   const { projections, finalYear, winner, difference, finalStampDuty, finalLMI } = useRentvestingModel(inputs);
 
   return (
@@ -59,12 +55,11 @@ export default function RentvestingCalculator() {
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
-        <RentvestingInputs 
-          inputs={inputs} 
-          handleInputChange={handleInputChange} 
-          handleSliderChange={handleSliderChange} 
-          finalStampDuty={finalStampDuty} 
-          finalLMI={finalLMI} 
+        <RentvestingInputs
+          inputs={inputs}
+          handleInputChange={handleInputChange}
+          finalStampDuty={finalStampDuty}
+          finalLMI={finalLMI}
         />
         <RentvestingResults 
           inputs={inputs}

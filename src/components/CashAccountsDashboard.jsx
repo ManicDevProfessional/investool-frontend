@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { Wallet, Landmark, ShieldCheck, ShieldAlert, PiggyBank, Plus, Trash2, ArrowUpRight, Activity } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -72,13 +72,13 @@ export default function CashAccountsDashboard() {
       <div className="w-full max-w-6xl space-y-8">
 
         {/* HEADER */}
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
+        <Motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
           <h1 className="text-4xl font-extrabold tracking-tight">Cash & Liquidity</h1>
           <p className="text-slate-500 mt-2 font-medium">Manage deployment capital, yields, and emergency runway.</p>
-        </motion.div>
+        </Motion.div>
 
         {/* HERO: TOTAL CASH & YIELD */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative overflow-hidden rounded-3xl p-10 bg-[#0a2540] text-white shadow-2xl">
+        <Motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative overflow-hidden rounded-3xl p-10 bg-[#0a2540] text-white shadow-2xl">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#10b981]/10 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3" />
           
           <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -109,7 +109,7 @@ export default function CashAccountsDashboard() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </Motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           
@@ -129,7 +129,7 @@ export default function CashAccountsDashboard() {
 
             <AnimatePresence>
               {accounts.map((acc) => (
-                <motion.div 
+                <Motion.div 
                   key={acc.id}
                   initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }}
                   className={`${cardStyle} relative group`}
@@ -154,7 +154,7 @@ export default function CashAccountsDashboard() {
                       <input type="number" step="0.1" value={acc.apy} onChange={(e) => updateAccount(acc.id, 'apy', Number(e.target.value))} className={`${ghostInput} text-2xl font-bold text-emerald-600`} />
                     </div>
                   </div>
-                </motion.div>
+                </Motion.div>
               ))}
             </AnimatePresence>
           </div>

@@ -85,7 +85,7 @@ export function useRentvestingModel(inputs) {
       });
     }
     return data;
-  }, [inputs, adjustedRate, adjustedGrowth, baseTax, loanAmount, finalStampDuty, finalLMI]);
+  }, [inputs, adjustedRate, adjustedGrowth, baseTax, loanAmount]);
 
   // Grab the final year dynamically based on loan term
   const finalYear = projections[projections.length - 1];

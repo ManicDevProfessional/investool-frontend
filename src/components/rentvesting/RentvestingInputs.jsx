@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { DollarSign, Calculator, Building2, Sliders, MapPin, ChevronDown, ChevronUp, Clock } from 'lucide-react';
 
-export default function RentvestingInputs({ inputs, handleInputChange, handleSliderChange, finalStampDuty, finalLMI }) {
+export default function RentvestingInputs({ inputs, handleInputChange, finalStampDuty, finalLMI }) {
   const [showDetailed, setShowDetailed] = useState(false);
 
   return (
